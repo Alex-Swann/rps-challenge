@@ -49,7 +49,6 @@ describe RPS do
       expect(rps_multi.result).to eq "It's a tie!"
     end
   end
-
 end
 
 

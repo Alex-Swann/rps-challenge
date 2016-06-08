@@ -22,7 +22,7 @@ class RPS
                 [:r, :sp] => 'Spock vaporizes Rock.'
                 }
 
-  attr_reader :players, :moves
+  attr_reader :players
 
   def initialize(player_1 = Player.new, player_2 = Computer.new.name)
     @players = [player_1, player_2]
