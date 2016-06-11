@@ -6,7 +6,7 @@ gem 'sinatra'
 gem 'rake'
 gem 'rspec-sinatra'
 gem 'capybara'
-gem 'shotgun'
+gem 'rerun'
 
 group :test do
   gem 'rspec'

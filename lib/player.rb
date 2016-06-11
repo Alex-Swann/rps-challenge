@@ -17,8 +17,8 @@ class Player
   end
 
 
-  def player_move
-    input_to_symbol
+  def player_move(move)
+    input_to_symbol(move)
   end
 
   def display_choice
@@ -27,8 +27,8 @@ class Player
 
   private
 
-  def input_to_symbol
-    @choice = gets.chomp.to_sym
+  def input_to_symbol(move)
+    @choice = move.to_sym
   end
 
   def choice

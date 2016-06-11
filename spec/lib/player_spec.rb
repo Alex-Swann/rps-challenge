@@ -16,19 +16,16 @@ describe Player do
 
   describe '#player_move' do
     it 'allows a player move' do
-      allow(player_no_name).to receive(:gets).and_return("s\n")
-      expect(player_no_name.player_move).to eq :s
+      expect(player_no_name.player_move('s')).to eq :s
     end
     it 'returns different player moves' do
-      allow(player_no_name).to receive(:gets).and_return("r\n")
-      expect(player_no_name.player_move).to eq :r
+      expect(player_no_name.player_move('r')).to eq :r
     end
   end
 
   describe '#display_choice' do
     it 'displays choice' do
-      allow(player_no_name).to receive(:gets).and_return("l\n")
-      player_no_name.player_move
+      player_no_name.player_move('l')
       expect(player_no_name.display_choice).to eq 'Lizard'
     end
   end
