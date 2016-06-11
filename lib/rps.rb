@@ -20,6 +20,14 @@ class RPS
     @players = [player_1, player_2]
   end
 
+  def self.create(player_1, player_2)
+    @game = RPS.new(player_1, player_2)
+  end
+
+  def self.instance
+    @game
+  end
+
   def players_names
     @players.map{ |player| player.name }
   end
