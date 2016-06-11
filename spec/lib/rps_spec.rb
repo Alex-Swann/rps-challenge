@@ -1,52 +1,27 @@
 require 'rps'
 
 describe RPS do
-  subject(:rps) { described_class.new("Dave") }
-  subject(:rps_multi) { described_class.new("Dave","Spencer") }
+  subject(:rps) { described_class.new(player1, computer) }
 
-  describe '#players' do
-    it 'can display one player and computer' do
-      expect(rps.players).to eq ["Dave","SkyNet"]
-    end
-    it 'can have two players' do
-      expect(rps_multi.players).to eq ["Dave", "Spencer"]
-    end
-  end
+  let(:computer) { double(:computer, name: "SkyNet", player_move: :sp) }
+  let(:player1) { double(:player1, name: "Dave", player_move: :r) }
 
-  describe '#player_1_move' do
-    it 'allows a player move' do
-      $stdin = StringIO.new("s")
-      expect(rps.player_1_move).to eq 'Scissors'
-    end
-    it 'returns different player moves' do
-      $stdin = StringIO.new("r")
-      expect(rps.player_1_move).to eq 'Rock'
-    end
-  end
+  let(:computer2) { double(:computer2, player_move: :l) }
+  let(:player2) { double(:player2, player_move: :l) }
 
-  describe '#player_2_move' do
-    it 'allows a second player to move' do
-      $stdin = StringIO.new("r")
-      rps_multi.player_1_move
-      $stdin = StringIO.new("l")
-      expect(rps_multi.player_2_move).to eq 'Lizard'
+  describe '#players_name' do
+    it 'should display player and computer names' do
+      expect(rps.players_names).to eq ["Dave", "SkyNet"]
     end
   end
 
   describe '#result' do
-    it 'should yield a result' do
-      $stdin = StringIO.new("r")
-      rps_multi.player_1_move
-      $stdin = StringIO.new("l")
-      rps_multi.player_2_move
-      expect(rps_multi.result).to eq 'Rock crushes Lizard.'
+    it 'should display a result' do
+      expect(rps.result).to eq 'Spock vaporizes Rock.'
     end
-    it 'should return a tie if there is one' do
-      $stdin = StringIO.new("sp")
-      rps_multi.player_1_move
-      $stdin = StringIO.new("sp")
-      rps_multi.player_2_move
-      expect(rps_multi.result).to eq "It's a tie!"
+    it 'can result in a tie' do
+      rps_tie = RPS.new(player2, computer2)
+      expect(rps_tie.result).to eq "It's a tie!"
     end
   end
 end
