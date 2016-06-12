@@ -23,10 +23,11 @@ describe Player do
     end
   end
 
-  describe '#display_choice' do
-    it 'displays choice' do
-      player_no_name.player_move('l')
-      expect(player_no_name.display_choice).to eq 'Lizard'
+  describe '#choice' do
+    it 'allows a player move' do
+      player_no_name.player_move('s')
+      expect(player_no_name.choice).to eq :s
     end
   end
+
 end

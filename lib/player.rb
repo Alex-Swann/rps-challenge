@@ -1,40 +1,20 @@
 
 class Player
 
-  attr_reader :name
+  attr_reader :name, :choice
 
   DEFAULT_NAME = 'PieInTheSky'
 
-  MOVES = {:r => 'Rock',
-           :p => 'Paper',
-           :s => 'Scissors',
-           :l => 'Lizard',
-           :sp => 'Spock'
-          }
-
   def initialize(name = DEFAULT_NAME)
-    @name = name
+    @name = name #( name == '' ? DEFAULT_NAME : name )
   end
-
 
   def player_move(move)
-    input_to_symbol(move)
-  end
-
-  def display_choice
-    "#{choice}"
-  end
-
-  private
-
-  def input_to_symbol(move)
     @choice = move.to_sym
   end
 
-  def choice
-    MOVES[@choice]
-  end
 end
+
 
 
 

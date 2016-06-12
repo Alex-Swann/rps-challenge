@@ -13,16 +13,10 @@ describe Computer do
     end
   end
 
-  describe '#player_move' do
-    it 'allows computer player to move randomly' do
-      expect(comp.player_move).to eq :sp
+  describe '#choice' do
+    it 'allows computer player to pick moves randomly' do
+      expect(comp.choice).to eq :sp
     end
   end
 
-  describe '#display_choice' do
-    it 'displays choice' do
-      comp.player_move
-      expect(comp.display_choice).to eq 'Spock'
-    end
-  end
 end

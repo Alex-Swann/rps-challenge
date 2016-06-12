@@ -15,6 +15,7 @@ class RPS
                 [:r, :sp] => 'Spock vaporizes Rock.'
                 }
 
+  attr_reader :players
 
   def initialize(player_1 = Player.new, player_2 = Computer.new)
     @players = [player_1, player_2]
@@ -48,7 +49,7 @@ class RPS
   end
 
   def players_moves
-    @players.map{ |player| player.player_move }
+    @players.map{ |player| player.choice }
   end
 end
 

@@ -1,12 +1,22 @@
 
-feature '#choose_item' do
-  scenario 'players can pick objects to play with' do
-    visit('/')
-    fill_in :player_1_name, with: "Dave"
-    fill_in :player_2_name, with: "Mittens"
-    click_button 'Play!'
-    click_link 'Rock'
-    click_link 'Lizard'
+feature 'Choose_Items' do
+  before :each do
+    srand(0)
+  end
+
+  scenario 'players can pick objects in multiplayer' do
+    multi_sign_in_and_play
+    select "Rock", :from => "pick_option1"
+    click_button 'Select'
+    select "Lizard", :from => "pick_option2"
+    click_button 'Select'
     expect(page).to have_content 'Rock crushes Lizard.'
+  end
+
+  scenario 'single player can pick item' do
+    sign_in_and_play
+    select "Rock", :from => "single_select"
+    click_button 'Select'
+    expect(page).to have_content "Spock vaporizes Rock."
   end
 end
