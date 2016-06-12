@@ -16,7 +16,7 @@ describe Computer do
   describe '#choice' do
     it 'allows computer player to pick moves randomly' do
       comp.player_move
-      expect(comp.choice).to eq :sp
+      expect(comp.choice).to eq :g
     end
   end
 

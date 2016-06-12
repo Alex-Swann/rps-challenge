@@ -1,20 +1,155 @@
 
-
-<%= @game.players_names[0] %> vs. <%= @game.players_names[1] %>
-
-<br>
-
-<h5><%= @game.players_names[1]%> - Please pick an option below:</h5>
-
-<form action="/player2_select" method="post">
-
-  <select name="pick_option2">
+<!--
     <option value='l'>Lizard</option>
     <option value='p'>Paper</option>
     <option value='r'>Rock</option>
     <option value='s'>Scissors</option>
     <option value='sp'>Spock</option>
-  </select>
-  <button type="submit" name="submit">Select</button>
+    <option value='w'>Wizard</option>
+    <option value='spm'>Spider-Man</option>
+    <option value='g'>Glock</option>
+    <option value='b'>Batman</option> -->
 
-</form>
+
+<!--
+  <div style="text-align: center">
+    <input style='width: 20%;' type='image' src='https://i.imgur.com/fjvmwBg.png' name='single_select' value='r'/>
+
+    <input style='width: 30%;' type='image' src='https://i.imgur.com/uSOxPLm.png' name='single_select' value='sp'/>
+
+    <input style='width: 50%;' type='image' src='https://i.imgur.com/tsV3zlG.png' name='single_select' value='g'/>
+  </div> -->
+
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"  alt=""/>
+<title>RPS Game</title>
+
+<link rel="stylesheet" type="text/css" href="css/carousel.css" media="screen" alt=""/>
+<link rel="stylesheet" type="text/css" href="css/facebox.css" media="screen" alt=""/>
+
+<script rel='stylesheet' type="text/css" href="css/style.css" media="screen"></script>
+
+<script type="text/javascript" src="js/jquery-1.7.1.min.js"></script>
+<script type="text/javascript" src="js/jquery.carousel.min.js"></script>
+<script type="text/javascript" src="js/facebox.js"></script>
+
+<link href="//db.onlinewebfonts.com/c/1e1f6f3346d00dc0fcbad2d9503b7361?family=Cow+Jump" rel="stylesheet" type="text/css"/>
+
+<link href="//db.onlinewebfonts.com/c/ad74e11c9c238bcdfb0ebe78d55e22c5?family=Barcool" rel="stylesheet" type="text/css"/>
+
+<script type="text/javascript">
+
+
+
+  var carousel;
+
+  jQuery(document).ready(function($){
+    carousel = $('#carousel').carousel({width: 870,
+                      height: 350,
+                      itemWidth:120,
+                      horizontalRadius:270,
+                      verticalRadius:85,
+                      mouseScroll:true,
+                      scrollOnClick:false,
+                      resize:false,
+                      scaleRatio:0.4,
+                      scrollbar:true,
+                      itemClick:onItemClick});
+  });
+
+
+  function onItemClick(event) {
+    // open the large image
+    $.facebox({image:event.data.bigImage});
+    // disable the mouse scrollgin
+    carousel.stopMouseScroll();
+  }
+
+  // when the large image is closed, enable the mouse scrolling
+  $(document).bind('afterClose.facebox', function() { carousel.startMouseScroll(); })
+
+</script>
+
+</head>
+
+<body style='background-color: #b3ecff'>
+
+  <div style='background:url(https://i.imgur.com/iRnwxPI.png) repeat-x; height:50rem; background-position: center; opacity: 0.15;'>
+  </div>
+
+  <div style='position: absolute; top: 5rem; left: 0rem'>
+      <div style="text-align: center;">
+        <h1 style="font-family: 'Barcool'; font-size: 500%; color: #ff884d"><%= @game.players_names[0] %> vs. <%= @game.players_names[1] %>
+        </h1>
+          <br>
+
+        <h1 style="font-family: 'Barcool'; color: #ff884d">
+        <%= @game.players_names[1]%> It is your turn. Please pick an option below</h1>
+
+
+      <!--   <input type='image' src='https://i.imgur.com/fjvmwBg.png' name='single_select' value='r' width="280" height="50" alt="3d carousel"/> -->
+      </div>
+
+<form action="/player2_select" method="post">
+
+  <table>
+    <tr>
+
+    <td>
+    <input style='width: 100%;' type='image' src='https://i.imgur.com/fjvmwBg.png' name='pick_option2' value='r'/>
+    </td>
+
+    <td>
+    <input style='width: 200%;' type='image' src='https://i.imgur.com/uSOxPLm.png' name='pick_option2' value='sp'/>
+    </td>
+
+    <td>
+    <input style='width: 60%; position: relative; right: -2rem;' type='image' src='https://i.imgur.com/tsV3zlG.png' name='pick_option2' value='g'/>
+    </td>
+
+    <td>
+    <input style='width: 180%; position: relative; right: 6rem;' type='image' src='https://i.imgur.com/ojYq1y0.png' name='pick_option2' value='spm'/>
+    </td>
+
+    <td>
+    <input style='width: 300%; position: relative; right: 4rem;' type='image' src='https://i.imgur.com/xTzCse4.png' name='pick_option2' value='w'/>
+    </td>
+
+    <td>
+    <input style='width: 100%; position: relative; right: -1rem;' type='image' src='https://i.imgur.com/uHlQXQH.png' name='pick_option2' value='s'/>
+    </td>
+
+    <td>
+    <input style='width: 70%; position: relative; right: -1rem;' type='image' src='https://i.imgur.com/UIWUIJv.png' name='pick_option2' value='p'/>
+    </td>
+
+    <td>
+    <input style='width: 100%; position: relative; right: 2rem;' type='image' src='http://i.imgur.com/JI615I0.png' name='pick_option2' value='b'/>
+    </td>
+
+    <td>
+    <input style='width: 200%; position: relative; right: 2rem;' type='image' src='https://i.imgur.com/kh3Cauw.png' name='pick_option2' value='l'/>
+    </td>
+
+</tr>
+</table>
+
+  </form>
+
+<!--     <ul id="carousel">
+      <li>
+        <img src="http://bqworks.com/products/3d-carousel/3d-carousel-example-images/image1.jpg" alt=""/>
+        <div class="bigImage">http://bqworks.com/products/assets/example-images/image1.jpg</div>
+
+      </li>
+    </ul> -->
+
+    </div>
+
+
+</body>
+
+</html>

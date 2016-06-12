@@ -1,19 +1,9 @@
 require_relative 'computer'
 require_relative 'player'
+require_relative 'rps_extended_combos'
 
 class RPS
-
-  MOVE_RESULT = {[:r, :s] => 'Rock crushes Scissors.',
-                [:r, :l] => 'Rock crushes Lizard.',
-                [:p, :r] => 'Paper covers Rock.',
-                [:p, :sp] => 'Paper disproves Spock.',
-                [:s, :p] => 'Scissors cut Paper.',
-                [:s, :l] => 'Scissors decapitate Lizard.',
-                [:l, :sp] => 'Lizard poisons Spock.',
-                [:l, :p] => 'Lizard eats Paper.',
-                [:sp, :s] => 'Spock smashes Scissors.',
-                [:sp, :r] => 'Spock vaporizes Rock.'
-                }
+  include RpsExtendedCombinations
 
   attr_reader :players
 
@@ -55,11 +45,11 @@ class RPS
   end
 
   def match_moves_to_hash
-    MOVE_RESULT.detect{ |moves,result| moves.sort ==  players_moves.sort }
+    MOVE_RESULT.detect{ |moves, _result| moves.sort ==  players_moves.sort }
   end
 
   def players_moves
-    @players.map{ |player| player.choice }
+    @players.map(&:choice)
   end
 
   def select_winner

@@ -1,14 +1,49 @@
+<DOCTYPE! html>
 
-<form action='/players' method='post'>
-  <label>2 Player Multiplayer Game</label><br>
-   <input type="text" name="player_1_name" placeholder="Player 1 Name">
-   <input type="text" name="player_2_name" placeholder="Player 2 Name">
-   <input type='submit' value='Play!'>
-</form>
-  <br>
-  <br>
-<form action='/player' method='post'>
-  <label>Single Player Game</label> <br>
-    <input type="text" name="single_player_name" placeholder="Player 1 Name">
-    <input type='submit' value='Play Single!'>
-</form>
+<html>
+  <head>
+    <link href="//db.onlinewebfonts.com/c/1e1f6f3346d00dc0fcbad2d9503b7361?family=Cow+Jump" rel="stylesheet" type="text/css"/>
+
+    <link href="//db.onlinewebfonts.com/c/43f4baf42da5b6a7a104c44af9737af2?family=EvelethW01-CleanRegular" rel="stylesheet" type="text/css"/>
+
+     <link href="//db.onlinewebfonts.com/c/ad74e11c9c238bcdfb0ebe78d55e22c5?family=Barcool" rel="stylesheet" type="text/css"/>
+
+    <link rel="stylesheet" type='text/css' href='css/style.css'/>
+
+
+  </head>
+
+  <body style='background-color: #b3ecff;'>
+
+    <div style='background:url(https://i.imgur.com/iRnwxPI.png) repeat-x; height:50rem; background-position: center; opacity: 0.1;'>
+    </div>
+
+    <div style='position: absolute; top: 5rem; left: 3rem'>
+      <div style='text-align: center; font-family: "Barcool"; font-size: 200%; color: #ff884d'>
+        <h1>Welcome</h1>
+        <h1>to</h1>
+        <h1>Rock Paper Scissors Lizard Spock SpiderMan Batman Wizard Glock</h1>
+      </div>
+
+      <br>
+
+      <div style='text-align: center;'>
+        <form action='/players' method='post'>
+          <label style='font-family: "EvelethW01-CleanRegular"; color: #525252;'>2 Player Multiplayer Game</label><br>
+           <input type="text" name="player_1_name" placeholder="Player 1 Name">
+           <input type="text" name="player_2_name" placeholder="Player 2 Name">
+           <input class='btn-class' style='background-color: #64F581;font-family: "EvelethW01-CleanRegular";'  type='submit' value='Play!'>
+        </form>
+          <br>
+          <br>
+        <form action='/player' method='post'>
+          <label style='font-family: "EvelethW01-CleanRegular"; color: #525252;'>Single Player Game</label> <br>
+            <input type="text" name="single_player_name" placeholder="Player 1 Name">
+            <input class='btn-class' style='background-color: #64F581;font-family: "EvelethW01-CleanRegular";' type='submit' value='Play Single!'>
+        </form>
+      </div>
+    </div>
+
+  </body>
+
+</html>

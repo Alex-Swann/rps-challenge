@@ -1,7 +1,36 @@
+<DOCTYPE! html>
 
-<%= @game.result %>
-<br>
-<br>
-<br>
-<%= @game.winner %>
+<html>
+  <head>
+    <link href="//db.onlinewebfonts.com/c/1e1f6f3346d00dc0fcbad2d9503b7361?family=Cow+Jump" rel="stylesheet" type="text/css"/>
 
+    <link href="//db.onlinewebfonts.com/c/43f4baf42da5b6a7a104c44af9737af2?family=EvelethW01-CleanRegular" rel="stylesheet" type="text/css"/>
+
+    <link href="//db.onlinewebfonts.com/c/ad74e11c9c238bcdfb0ebe78d55e22c5?family=Barcool" rel="stylesheet" type="text/css"/>
+
+
+    <link rel="stylesheet" type='text/css' href='css/style.css'/>
+
+
+  </head>
+
+  <body style='background-color: #b3ecff;'>
+
+    <div style='background:url(https://i.imgur.com/iRnwxPI.png) repeat-x; height:50rem; background-position: center; opacity: 0.1;'>
+    </div>
+
+    <div style='position: absolute; top: 5rem; left: 15rem'>
+      <div style='text-align: center; font-family: "Barcool"; font-size: 300%; color: #ff884d'>
+        <h1><%= @game.result %></h1>
+        <br>
+        <h1><%= @game.winner %></h1>
+      </div>
+      <form style='text-align: center;'action='/' method='get'>
+           <input class='btn-class' style='background-color: #64F581;font-family: "EvelethW01-CleanRegular";'  type='submit' value='Play Again?!'>
+      </form>
+    </div>
+
+
+  </body>
+
+</html>

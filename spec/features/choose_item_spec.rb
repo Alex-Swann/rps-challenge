@@ -6,17 +6,14 @@ feature 'Choose_Items' do
 
   scenario 'players can pick objects in multiplayer' do
     multi_sign_in_and_play
-    select "Rock", from: "pick_option1"
-    click_button 'Select'
-    select "Lizard", from: "pick_option2"
-    click_button 'Select'
-    expect(page).to have_content 'Rock crushes Lizard.'
+    page.first("input").click
+    page.first("input").click
+    expect(page).to have_content "It's a tie!"
   end
 
   scenario 'single player can pick item' do
     sign_in_and_play
-    select "Rock", from: "single_select"
-    click_button 'Select'
-    expect(page).to have_content "Spock vaporizes Rock."
+    page.first("input").click
+    expect(page).to have_content "Glock breaks Rock."
   end
 end

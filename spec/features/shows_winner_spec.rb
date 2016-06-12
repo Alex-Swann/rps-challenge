@@ -5,8 +5,7 @@ feature 'Winner Shown' do
   end
   scenario 'winner shown when single player selection made' do
     sign_in_and_play
-    select "Rock", from: "single_select"
-    click_button 'Select'
+    page.first("input").click
     expect(page).to have_content "SkyNet wins!!!"
   end
 end
