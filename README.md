@@ -1,4 +1,4 @@
-[![Build Status](https://travis-ci.org/Alex-Swann/rps-challenge.svg?branch=master)](https://travis-ci.org/Alex-Swann/rps-challenge)  [![Coverage Status](https://coveralls.io/repos/github/Alex-Swann/rps-challenge/badge.svg?branch=master)](https://coveralls.io/github/Alex-Swann/rps-challenge?branch=master)
+[![Build Status](https://travis-ci.org/Alex-Swann/alex-rps-challenge.svg?branch=master)](https://travis-ci.org/Alex-Swann/alex-rps-challenge) [![Coverage Status](https://coveralls.io/repos/github/Alex-Swann/alex-rps-challenge/badge.svg?branch=master)](https://coveralls.io/github/Alex-Swann/alex-rps-challenge?branch=master)
 
 # RPSSPL Challenge
 
