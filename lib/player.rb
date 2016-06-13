@@ -5,8 +5,8 @@ class Player
 
   DEFAULT_NAME = 'PieInTheSky'
 
-  def initialize(name = DEFAULT_NAME)
-    @name = name #( name == '' ? DEFAULT_NAME : name )
+  def initialize(name)
+    @name = ( name == '' ? DEFAULT_NAME : name )
   end
 
   def player_move(move)

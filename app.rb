@@ -38,6 +38,7 @@ class RockPaperScissors < Sinatra::Base
   end
 
   post "/single_player_select" do
+    p params
     @game.players[0].player_move(params[:single_select])
     @game.players[1].player_move
     redirect '/result'
